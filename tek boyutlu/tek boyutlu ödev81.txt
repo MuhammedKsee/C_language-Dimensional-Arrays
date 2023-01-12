@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+
+int x,A,U;
+
+printf("alt sinir girin: ");
+scanf("%d",&A);
+printf("ust sinir girin: ");
+scanf("%d",&U);
+
+if(A<=U)
+{
+    for(A;A<=U;A++)
+    {
+        int palindrom=0,sayi=A,kalan;
+        x=A;
+        while(x!=0)
+        {
+            kalan=x%10;
+            palindrom=palindrom*10+kalan;
+            x/=10;
+        }
+            if(sayi==palindrom)
+                printf("%d\n",A);
+    }
+}
+else
+    printf("hatali giris");
+return 0;
+}

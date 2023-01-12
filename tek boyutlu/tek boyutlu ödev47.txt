@@ -1,0 +1,40 @@
+char dizi[6],karakter[10],harfler[32]={'A','E','2','Y','U','I','O','3','J','G','H','B','C','F','D','4','5','X','Z','S','T','W','V','6','K','M','L','R','Q','N','P','\0'};
+int sayi=0,i=0,kalan,l=0;
+	
+	printf("metni giriniz.... sadece buyuk harfler giriniz:");
+	gets(karakter);
+	
+	
+	for(int l=0;strlen(karakter)>l;l++)
+	{
+		for (int m=0;m<31;m++)
+		{
+			if(karakter[l]==harfler[m])
+			{
+				sayi=m+1;
+			}
+		}
+		
+		i=0;	
+			
+		while (sayi>0)
+		{
+			kalan=sayi%2;
+			dizi[i]=kalan;
+			sayi=(sayi-kalan)/2;
+			i++;
+		}
+		
+		i-=1;
+		
+		printf("%c karakterin kodu:",karakter[l]);
+		
+		for(int j=i;j>=0;j--)
+		{
+			printf("%d",dizi[j]);
+		}
+			
+		printf("\n");
+		
+		
+	}

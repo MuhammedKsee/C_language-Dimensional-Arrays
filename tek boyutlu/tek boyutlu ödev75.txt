@@ -1,0 +1,14 @@
+char str[6];
+int i,dizi[6]={9,5,1,7,5,3};
+	
+	printf("6 harfli cozulecek kelimeyi giriniz");
+	gets(str);
+	
+	for(i=0;str[i]!='\0';i++)
+	{
+		str[i]-=dizi[i];
+	}
+ 	for(i=0;i<6;i++)
+	{
+		 printf("%c",str[i]);
+	}

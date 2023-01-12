@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	char array[100];
+	char sesli[16]={'a','e','i','u','ı','ü','o','ö','A','E','İ','U','I','Ü','O','Ö'};
+int i,k;
+
+printf("Yazi giriniz:");
+gets(array);
+
+for(i=0; array[i]!='\0';i++)
+{
+	for(k=0; k<=14; k++)
+	{
+	if(array[i]==sesli[k])
+	{
+		array[i]+=3;
+		printf("%c",array[i]);
+		printf("*");
+		k=15;
+		
+	}
+	else
+	{
+		printf("%c",array[i]);
+		k=15;
+	}
+
+}
+}
+return 0;
+}

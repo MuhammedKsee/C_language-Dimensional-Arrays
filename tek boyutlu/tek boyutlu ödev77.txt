@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	char array[100];
+
+int i,k;
+
+printf("Sifreyi giriniz:");
+gets(array);
+
+for(i=0; array[i]!='\0';i++)
+{
+
+	if(array[i+1]=='*')
+	{
+		array[i]-=3;
+		printf("%c",array[i]);
+		
+		
+		
+	}
+	else if(array[i]=='*')
+	{
+		printf("");
+	}
+	else
+	{
+		printf("%c",array[i]);
+	
+	}
+
+}
+
+return 0;
+}

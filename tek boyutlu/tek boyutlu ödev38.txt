@@ -1,0 +1,27 @@
+int sayi,l,m,kalan,dizi[100];	
+	
+	printf("Cevirmek istediginiz sayiyi giriniz:");
+	scanf("%d",&sayi);
+	
+	l=sayi;
+	
+	while (sayi>0)
+	{
+		kalan=sayi%10;
+		sayi=(sayi-kalan)/10;
+		m++;
+	}
+	sayi=l;
+	
+	for(int i=0;m>=i;i++)
+	{
+		kalan=sayi%8;
+		sayi=(sayi-kalan)/8;
+		dizi[i]=kalan;
+	}
+	
+	for(int i=m-1;i>=0;i--)
+	{
+		printf("%d",dizi[i]);
+	}
+	

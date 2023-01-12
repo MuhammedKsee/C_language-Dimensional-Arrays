@@ -1,0 +1,17 @@
+int sayi,kalan,toplam,i=0;
+
+	printf("Sayiyi giriniz:");
+	scanf("%d",&sayi);
+	
+	toplam=0;
+	
+	while (sayi>0)
+	{
+		kalan=sayi%10;
+		sayi=(sayi-kalan)/10;
+		toplam+=kalan*pow(8,i);
+		i++;
+	}
+	
+	printf("Sonuc %d",toplam);
+	

@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+#define N 2
+
+void decrypt(int cipher[], int key[][N], int decrypt[])
+{
+    int x, i, j;
+    for(x = 0; x < strlen(cipher); x += N)
+    {
+        for(i = 0; i < N; i++)
+        {
+            decrypt[x + i] = 0;
+            for(j = 0; j < N; j++)
+            {
+                decrypt[x + i] += key[i][j] * cipher[x + j];
+            }
+            decrypt[x + i] = fmod(decrypt[x + i], 26);
+        }
+    }
+}
+
+int main()
+{
+    int key[N][N] = {{3, 3}, {2, 5}};
+    int cipher[] = {7, 4, 11, 11, 14, 26, 19, 6, 12, 8};
+    int decrypt[sizeof(cipher)];
+    int i;
+
+    decrypt(cipher, key, decrypt);
+
+    for(i = 0; i < sizeof(decrypt); i++)
+    {
+        printf("%c", decrypt[i] + 'A');
+    }
+
+    return 0;
+}

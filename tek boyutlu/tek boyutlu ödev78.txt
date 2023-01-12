@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	
+int sayi,i,bas=0,temp,a,b;
+int dizi[100];
+
+printf("Sayiyi giriniz:");
+scanf("%d",&sayi);
+
+temp=sayi;
+
+while(temp>0)
+{
+	temp=(temp-(temp%10))/10;
+	bas++;
+}
+
+	for(i=0; sayi!=0; i++)
+	{
+	  a=sayi%10;
+	  b=a;
+	  
+	if(a%2==0)
+	{
+		a=a+1;
+		dizi[i]=a;
+	}
+	else
+	{
+		a=a-1;
+		dizi[i]=a;
+	}
+	
+	sayi=(sayi-b)/10;
+	
+    }
+    
+    
+for(i=bas-1; i>=0; i--)
+{
+	printf("%d",dizi[i]);
+}
+	return 0;
+}

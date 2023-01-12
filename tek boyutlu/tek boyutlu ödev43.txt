@@ -1,0 +1,35 @@
+char mesaj[100];
+int  temp,kalan,k=0,dizi[100],j=0;
+	
+	printf("Mesaji giriniz:");
+	gets(mesaj);
+	
+	
+	printf("mesajinizin 8 tabaninda ascii kodu:\n");
+	
+	
+	for(int i=0;mesaj[i]!='\0';i++)
+	{
+		temp=mesaj[i];
+		
+		printf("%c karakterinin kodu:",mesaj[i]);
+		
+		while(temp>0)
+		{
+			kalan=temp%8;
+			temp=(temp-kalan)/8;
+			dizi[j]=kalan;
+			j++;	
+		}
+		while(j>0)
+		{
+			printf("%d",dizi[j-1]);
+			j--;
+		}
+		printf("\n");
+		j=0;
+	}
+
+
+
+

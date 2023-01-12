@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+int main(){
+
+
+
+char mesaj[100],A,B,C,D,E,F;
+int  temp,kalan,k=0,dizi[100],j=0;
+	
+	printf("Mesaji giriniz:");
+	gets(mesaj);
+	
+	
+	printf("mesajinizin 16 tabaninda ascii kodu:\n");
+	
+	
+	for(int i=0;mesaj[i]!='\0';i++)
+	{
+		temp=mesaj[i];
+		
+		printf("%c karakterinin kodu:",mesaj[i]);
+		
+		while(temp>0)
+		{
+			kalan=temp%16;
+			temp=(temp-kalan)/16;
+			if(kalan<10)
+			{
+				dizi[j]=kalan;
+				j++;
+			}
+			else 
+			{
+				switch (kalan)
+				{
+					case 10: dizi[j]='A'; break;
+					case 11: dizi[j]='B'; break;
+					case 12: dizi[j]='C'; break;
+					case 13: dizi[j]='D'; break;
+					case 14: dizi[j]='E'; break;
+					case 15: dizi[j]='F'; break;
+				}
+			    j++; 
+			}		
+		
+		}
+		while(j>0)
+		{
+			if(dizi[j-1]=='A'||dizi[j-1]=='B'||dizi[j-1]=='C'||dizi[j-1]=='D'||dizi[j-1]=='E'||dizi[j-1]=='F')
+			{
+				printf("%c",dizi[j-1]);
+				j--;
+			}
+			else
+			{
+				printf("%d",dizi[j-1]);
+				j--;
+			}
+		}
+		printf("\n");
+		j=0;
+	}
+
+
+
+
+
+	return 0;
+}
