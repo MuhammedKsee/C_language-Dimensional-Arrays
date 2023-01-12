@@ -1,0 +1,27 @@
+#include <stdio.h>
+main(){
+	int A[100][100],i,j,n,c,sayaces=0,sayacesdegil=0;
+	printf("lutfen sutun ve satir sinirini giriniz.\n");
+	scanf("%d",&n);
+ 		for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+				printf("A[%d][%d] : ",i,j);
+				scanf("%d",&A[i][j]);
+			}
+		}
+		for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+				if (A[i][j]*A[i][j]!=A[i][j]){
+				sayacesdegil++;	
+				}
+				else
+				sayaces++;
+			}
+		}
+		if(sayaces==n*n){
+			printf("Es kuvvetli matriksdir.\n");
+		}
+		else{
+			printf("Es kuvvetli matriks degildir.\n");
+		}
+}

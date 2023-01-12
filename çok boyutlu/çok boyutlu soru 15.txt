@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+main(){
+	char str1[100],str2[100],str3[100];
+	int i,j;
+	printf("herhangi uzunlukta bir kelime ya da cumle yaziniz.\n");
+	gets(str1);	
+	for(i=0;str1[i]!='\0';i++)
+		printf("%c\n",str1[i]);	
+}

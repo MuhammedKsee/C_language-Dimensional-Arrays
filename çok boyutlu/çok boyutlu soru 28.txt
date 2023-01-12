@@ -1,0 +1,46 @@
+#include<stdio.h>
+main(){
+	int A[100][100],i,j,n,satirtop,temp,sayac;
+	printf("Lutfen sutun ve satir sinirini giriniz.\n");
+	scanf("%d",&n);
+	printf("Lutfen dizinin elemanlarini sirasiyla giriniz.\n");
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			printf("A[%d][%d]",i,j);
+			scanf("%d",&A[i][j]);
+		}
+	}
+	printf("A matrisi.\n");
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			printf(" %d ",A[i][j]);
+		}
+		printf("\n");
+	}
+	while(sayac<n){
+		for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+				if(A[i][j]<A[i][j+1]&&A[i][j+1]!=0){
+					temp=A[i][j];
+					A[i][j]=A[i][j+1];
+					A[i][j+1]=temp;
+				}
+				else{
+				}	
+			}
+		}
+		sayac++;
+	}
+	
+	printf("Yeni A matrisi.\n");
+	for(i=0;i<n;i++){
+
+			printf(" %d ",A[i][0]);
+		
+		printf("\n");
+	}
+	for(i=0;i<n;i++){
+		satirtop += A[i][0];
+	}
+	printf("Satir degerlerinin toplami : %d",satirtop);
+}

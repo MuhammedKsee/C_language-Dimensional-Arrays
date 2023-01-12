@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(int argc, char *argv[]) {
+	int m,n,i,j,k,l;
+	int A[m][n];
+	int B[100][100];
+	printf("A matrisinin satir sayisini giriniz: ");
+	scanf("%d",&m);
+	printf("Lütfen satir sayisindan farkli bir sutun sayisi giriniz!!!\n");
+	printf("A matrisinin sutun sayisini giriniz: ");
+	scanf("%d",&n);
+	if(m==n)
+	{
+		printf("Farklý bir sutun sayisi giriniz: \n");
+		scanf("%d",&n);
+	}
+	for (i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf(" A[%d][%d] indisini giriniz: ",i,j);
+			scanf("%d",&A[i][j]);
+		}
+	}
+	for(k=0;k<m;k++)
+	{
+		for(l=0;l<n;l++)
+		{
+			if(A[k][l]<0)
+			{
+				B[100][100]=A[k][l];
+				printf("B[][]: %d\n",B[100][100]);
+			}
+			
+		}
+	}
+	return 0;
+}
